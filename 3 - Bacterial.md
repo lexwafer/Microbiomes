@@ -21,7 +21,7 @@ apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime cutadapt trim-paired
 mkdir Filtered
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime quality-filter q-score --i-demux Adapter_Trimming/Bacterial_trimmed.qza --p-min-quality 28 --o-filter-stats Filtered/filt_stats.qza --o-filtered-sequences Filtered/trimmed_filtered.qza
 ```
-## Do you want to assess the quality? Then, use the following:
+## Do you want to assess the quality? Then, use the following: - start here after 4/3
 ```shell
 mkdir Assessment
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime tools export --input-path Filtered/trimmed_filtered.qza --output-path Assessment
