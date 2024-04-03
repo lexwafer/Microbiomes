@@ -1,13 +1,13 @@
 Login in OSC
 ```shell
-ssh xxxxx
-xxxxx
+ssh wafer2@osc.edu
+#enter password
 ````
 
 ## Preparing basic directory structure
 Directories:
 ```shell
-cd /fs/scratch/PASXXXX/Your_OSC_ID
+cd /fs/scratch/PAS2658/Alexis
 mkdir Microbiomes
 cd Microbiomes
 mkdir Raw_Data Software QC Bacterial Fungal
@@ -60,4 +60,4 @@ wget 'https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB45622&resul
 
 # Dowload the data
 module load java/1.8.0_131
-java -jar ../Software/ena-file-downloader.jar --accessions=ENA_Run_Info.tsv --format=READS_FASTQ --protocol=FTP --asperaLocation=null --email your_email.#@osu.edu --location=$PWD
+java -jar ../Software/ena-file-downloader.jar --accessions=ENA_Run_Info.tsv --format=READS_FASTQ --protocol=FTP --asperaLocation=null --email wafer.2@osu.edu --location=$PWD
