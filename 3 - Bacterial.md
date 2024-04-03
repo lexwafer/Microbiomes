@@ -33,7 +33,7 @@ apptainer exec ../Software/MultiQC.sif multiqc Assessment/FastQC_assessment -o A
 ```shell
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime deblur denoise-16S --i-demultiplexed-seqs Filtered/trimmed_filtered.qza --p-trim-length 260 --p-sample-stats --p-jobs-to-start 27 --p-min-reads 1 --output-dir deblur_output
 ```
-## Convert the Qiime QZA format (for handling in Qiime) to TSV (tab-separated file) for easier visualization -start here after 4/3
+## Convert the Qiime QZA format (for handling in Qiime) to TSV (tab-separated file) for easier visualization 
 ```shell
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime tools export --input-path deblur_output/stats.qza --output-path deblur_output
 ```
@@ -60,7 +60,7 @@ apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime phylogeny fasttree -
 # Adding root to the tree
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime phylogeny midpoint-root --i-tree tree_out/rep_seqs_filt_aligned_masked_tree.qza --o-rooted-tree tree_out/rep_seqs_filt_aligned_masked_tree_rooted.qza
 ```
-## Producing rarefaction curves
+## Producing rarefaction curves-start here after 4/3
 ```shell
 # Without metadata
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime diversity alpha-rarefaction --i-table deblur_output/table_filt.qza --p-max-depth 6000 --p-steps 20 --i-phylogeny tree_out/rep_seqs_filt_aligned_masked_tree_rooted.qza --o-visualization rarefaction_curves_eachsample.qzv
