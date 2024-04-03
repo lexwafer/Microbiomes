@@ -18,7 +18,11 @@ ls *fastq.gz
 apptainer exec ../Software/FastQC.sif fastqc *fastq.gz --outdir=FastQC_reports
 apptainer exec ../Software/MultiQC.sif multiqc FastQC_reports --interactive -o MultiQC_reports
 # Check your reports. Do you notice something you should be worried about?
+
+
 ```
+We will need to do some serious trimming here, according to reports
+
 
 # You will need to produce a tab separated file with the names of the samples (check the file used to download the data) and with the paths get the files, the file should look like the lines below (first line are headers). It is called manifest file:
 ```shell
