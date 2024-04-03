@@ -21,7 +21,7 @@ apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime cutadapt trim-paired
 mkdir Filtered
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime quality-filter q-score --i-demux Adapter_Trimming/Bacterial_trimmed.qza --p-min-quality 28 --o-filter-stats Filtered/filt_stats.qza --o-filtered-sequences Filtered/trimmed_filtered.qza
 ```
-## Do you want to assess the quality? Then, use the following: - start here after 4/3
+## Do you want to assess the quality? Then, use the following: 
 ```shell
 mkdir Assessment
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime tools export --input-path Filtered/trimmed_filtered.qza --output-path Assessment
@@ -33,7 +33,7 @@ apptainer exec ../Software/MultiQC.sif multiqc Assessment/FastQC_assessment -o A
 ```shell
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime deblur denoise-16S --i-demultiplexed-seqs Filtered/trimmed_filtered.qza --p-trim-length 260 --p-sample-stats --p-jobs-to-start 27 --p-min-reads 1 --output-dir deblur_output
 ```
-## Convert the Qiime QZA format (for handling in Qiime) to TSV (tab-separated file) for easier visualization
+## Convert the Qiime QZA format (for handling in Qiime) to TSV (tab-separated file) for easier visualization -start here after 4/3
 ```shell
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime tools export --input-path deblur_output/stats.qza --output-path deblur_output
 ```
