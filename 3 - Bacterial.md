@@ -9,7 +9,7 @@ sinteractive -c 28 -t 01:00:00 -J Bacterial -A PAS2658
 ## Importing fastq files for use in Qiime
 ```shell
 cd /fs/scratch/PAS2658/Alexis/Microbiomes/Bacterial
-apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' --input-path /fs/scratch/PAS2658/Alexis/QC/Manifest.tsv --output-path Bacterial.qza --input-format PairedEndFastqManifestPhred33V2
+apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' --input-path Manifest.tsv --output-path Bacterial.qza --input-format PairedEndFastqManifestPhred33V2
 ```
 ## Removing primers
 ```shell
