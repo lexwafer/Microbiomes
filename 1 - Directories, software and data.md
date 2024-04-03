@@ -53,7 +53,7 @@ qiime q2-itsxpress
 
 ## Get the data from ENA-SRA, try this first, if it Does not work for you go to the option of copying the files from another directory
 ```shell
-cd /fs/scratch/PASXXXX/Your_OSC_ID/Microbiomes/Raw_Data
+cd /fs/scratch/PAS2658/Alexis/Microbiomes/Raw_Data
 
 # Download the data from ENA for BioProject PRJEB45622
 wget 'https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB45622&result=read_run&fields=study_accession,fastq_md5,fastq_ftp,sample_alias,sample_title&format=tsv&download=true&limit=0' -O - | tee ENA_Run_Info.tsv
