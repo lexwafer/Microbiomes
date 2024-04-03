@@ -26,11 +26,15 @@ We will need to do some serious trimming here, according to reports
 
 # You will need to produce a tab separated file with the names of the samples (check the file used to download the data) and with the paths get the files, the file should look like the lines below (first line are headers). It is called manifest file:
 ```shell
-sample-id   forward-absolute-filepath   reverse-absolute-filepath
-sample-1    filepath/sample0_R1.fastq.gz    filepath/sample1_R2.fastq.gz
-sample-2    filepath/sample2_R1.fastq.gz    filepath/sample2_R2.fastq.gz
-sample-3    filepath/sample3_R1.fastq.gz    filepath/sample3_R2.fastq.gz
-sample-4    filepath/sample4_R1.fastq.gz    filepath/sample4_R2.fastq.gz
+# Create the header
+echo -e "sample-id\tforward-absolute-filepath\treverse-absolute-filepath" > Manifest.tsv
+
+# Append data to the file
+echo -e "sample-1\tfilepath/sample0_R1.fastq.gz\tfilepath/sample1_R2.fastq.gz" >> Manifest.tsv
+echo -e "sample-2\tfilepath/sample2_R1.fastq.gz\tfilepath/sample2_R2.fastq.gz" >> Manifest.tsv
+echo -e "sample-3\tfilepath/sample3_R1.fastq.gz\tfilepath/sample3_R2.fastq.gz" >> Manifest.tsv
+echo -e "sample-4\tfilepath/sample4_R1.fastq.gz\tfilepath/sample4_R2.fastq.gz" >> Manifest.tsv
+
 
 # Getting basic files
 find -name "*1_fastq.gz" > sample-id.txt
