@@ -124,13 +124,16 @@ tee -a Bacterial_ANCOM_depth.sh <<EOF
 #SBATCH --ntasks=28
 #SBATCH --exclusive
 #SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --account=PASXXXX
-cd /fs/scratch/PASXXXX/Your_OSC_ID/Microbiomes/Bacterial
+#SBATCH --account=PAS2658
+cd /fs/scratch/PAS2658/Alexis/Microbiomes/Bacterial
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime composition ancom --i-table deblur_output/table_filt_pseudocount.qza --m-metadata-file Metadata.txt --o-visualization cultivar --m-metadata-column cultivar
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime composition ancom --i-table deblur_output/table_filt_pseudocount.qza --m-metadata-file Metadata.txt --o-visualization rootstock --m-metadata-column rootstock
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime composition ancom --i-table deblur_output/table_filt_pseudocount.qza --m-metadata-file Metadata.txt --m-metadata-column species --o-visualization species
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime composition ancom --i-table deblur_output/table_filt_pseudocount.qza --m-metadata-file Metadata.txt --m-metadata-column depth --o-visualization depth
 EOF
+
+squeue -u wafer2
+sbatch Bacterial_ANCOM_depth.sh
 ```
 ## Exporting final abundance (BIOM) and sequence files
 ```shell
