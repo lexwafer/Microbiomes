@@ -64,7 +64,11 @@ apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime phylogeny midpoint-r
 ```shell
 # Without metadata
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime diversity alpha-rarefaction --i-table deblur_output/table_filt.qza --p-max-depth 6000 --p-steps 20 --i-phylogeny tree_out/rep_seqs_filt_aligned_masked_tree_rooted.qza --o-visualization rarefaction_curves_eachsample.qzv
-# With metadata, copy metadata file from here: cp /fs/ess/PASXXXX/HCS7004_Files/Microbiomes/Metadata.txt The actual datasets are in Zoe's GitHub (https://github.com/zoemigicovsky/cool_climate_grape_microbiome).
+
+# With metadata, copy metadata file from here: cp /fs/ess/PAS2658/HCS7004_Files/Microbiomes/Metadata.txt The actual datasets are in Zoe's GitHub (https://github.com/zoemigicovsky/cool_climate_grape_microbiome).
+
+cp /fs/ess/PAS2658/HCS7004_Files/Microbiomes/Metadata.txt .
+
 apptainer run --writable-tmpfs ../Software/Qiime2.sif qiime diversity alpha-rarefaction --i-table deblur_output/table_filt.qza --p-max-depth 6000 --p-steps 20 --i-phylogeny tree_out/rep_seqs_filt_aligned_masked_tree_rooted.qza --m-metadata-file Metadata.txt --o-visualization rarefaction_curves_metadata.qzv
 ```
 ## Taxonomy assignment
