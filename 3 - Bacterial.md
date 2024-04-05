@@ -120,7 +120,7 @@ tee -a Bacterial_ANCOM_depth.sh <<EOF
 #!/bin/bash
 #SBATCH -J ondemand/sys/myjobs/basic_sequential
 #SBATCH --job-name Bacterial_ANCOM_depth
-#SBATCH --time=04:00:00
+#SBATCH --time=05:30:00
 #SBATCH --ntasks=28
 #SBATCH --exclusive
 #SBATCH --mail-type=BEGIN,END,FAIL
