@@ -36,7 +36,7 @@ tee -a Fungal_trimming.sh <<EOF
 cd /fs/scratch/PAS2658/Alexis/Microbiomes/Fungal
 module load miniconda3/23.3.1-py310
 conda activate qiime2-amplicon-2024.2
-qiime itsxpress trim-pair-output-unmerged --i-per-sample-sequences Fungal.qza --p-region ITS2 --p-taxa F --p-threads 28 --o-trimmed Trimming/trimmed.qza
+qiime q2-itsxpress trim-pair-output-unmerged --i-per-sample-sequences Fungal.qza --p-region ITS2 --p-taxa F --p-threads 28 --o-trimmed Trimming/trimmed.qza
 EOF
 ```
 ```
