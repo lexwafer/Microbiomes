@@ -3,7 +3,7 @@
 
 ## Requesting resources:
 ```shell
-sinteractive -c 28 -t 01:00:00 -J Fungal -A PASXXXX
+sinteractive -c 28 -t 01:00:00 -J Fungal -A PAS2658
 ```
 ## Go to directory Fungal:
 ```shell
@@ -32,8 +32,8 @@ tee -a Fungal_trimming.sh <<EOF
 #SBATCH --ntasks=28
 #SBATCH --exclusive
 #SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --account=PASXXXX
-cd /fs/scratch/PASXXXX/Your_OSC_ID/Microbiomes/Fungal
+#SBATCH --account=PAS2658
+cd /fs/scratch/PAS2658/Alexis/Microbiomes/Fungal
 module load miniconda3/23.3.1-py310
 conda activate qiime2-amplicon-2024.2
 qiime itsxpress trim-pair-output-unmerged --i-per-sample-sequences Fungal.qza --p-region ITS2 --p-taxa F --p-threads 28 --o-trimmed Trimming/trimmed.qza
